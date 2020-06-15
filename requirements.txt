@@ -1,0 +1,2 @@
+PySapGui>=1.0.2
+pykeepass>=3.2.0
