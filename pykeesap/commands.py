@@ -26,7 +26,7 @@ def cmd():
     parser_delete.set_defaults(func=SAPPasswordManager.delete_entry)
 
     parser_changekeepasspwd = subparsers.add_parser('changekeepasspwd',
-                                                    help='update password to entry in the KeePass Database')
+                                                    help='update password of entry in the KeePass Database')
     parser_changekeepasspwd.add_argument('title', type=str, help='entry title in KeePass')
     parser_changekeepasspwd.add_argument('-p', '--pwd', type=str, help='new password', required=True)
     parser_changekeepasspwd.set_defaults(func=SAPPasswordManager.change_keepass_password)
