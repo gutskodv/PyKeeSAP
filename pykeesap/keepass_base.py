@@ -2,7 +2,7 @@ import os
 import configparser
 from getpass import getpass
 from pykeepass import PyKeePass
-from pykeepass.exceptions import CredentialsIntegrityError
+from pykeepass.exceptions import CredentialsError
 from pykeesap.keepass_entry import KeePassEntryNew, PYKEEPASS_GROUP, SAP_ID, SAP_CLIENT
 
 DEFAULT_SECTION = "DEFAULT"
@@ -71,7 +71,7 @@ class KeePassDatabase:
                              KeePassDatabase.kee_pass_password,
                              keyfile=KeePassDatabase.key_file)
 
-        except (CredentialsIntegrityError, AttributeError, FileNotFoundError):
+        except (CredentialsError, AttributeError, FileNotFoundError):
             raise RuntimeError("Couldn't open the KeePass Database file '{0}'".format(KeePassDatabase.kee_pass_file))
 
     def delete_entry(self, entry):

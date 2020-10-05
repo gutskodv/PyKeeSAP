@@ -1,4 +1,5 @@
 from setuptools import setup
+import pykeesap
 
 with open('requirements.txt') as f:
     required = f.read().splitlines()
@@ -8,7 +9,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='PyKeeSAP',
-    version='1',
+    version=pykeesap.__version__,
     packages=['pykeesap'],
     url='https://github.com/gutskodv/PyKeeSAP',
     license='GPL v2',
